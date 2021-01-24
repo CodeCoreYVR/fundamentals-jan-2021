@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+</head>
+<body>
+  <!-- Relative paths -->
+
+  <!-- 
+    "." is an alias for the current directory that holds this file
+    If the image can't be found or doesn't load, the text in the "alt" attribute will be displayed instead. Also used in screen readers.
+   -->
+  <img src="./hard-drive.jpg" alt="Hard Drive">
+  
+  <!-- Relative to the root of this directory of this file (same as above) -->
+  <img src="hard-drive.jpg" alt="Hard Drive">
+
+  <!-- 
+    ".." is an alias for the parent directory
+    The current directory that this file resides in is "image-demo"
+    The parent of "image-demo" is where the pinecone.jpg is located
+   -->
+   <img src="../pinecone.jpg" alt="Pine Cone">
+   <img src="../example/example.jpeg" alt="Pine Cone">
+
+   <!-- Absolute paths -->
+   <!-- 
+     "/" is an alias for the root of the website that's hosted by your server
+     in this case, if we're using live server extension, the root of the server is the
+     directory that vscode has opened
+     "/" is an alias for the root of the drive on your machine if you just open the file itself
+    -->
+    <img src="/html-fundamentals/pinecone.jpg" alt="Pine Cone">
+    <img src="/html-fundamentals/image-demo/hard-drive.jpg" alt="Example">
+
+    <!-- we can access an image from the internet using HTTP -->
+    <img src="https://images.freeimages.com/images/small-previews/efb/eggs-oranges-5-1546938.jpg" alt="Egg">
+</body>
+</html>

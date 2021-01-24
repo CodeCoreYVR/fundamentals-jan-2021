@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+<body>
+  <!-- 
+    The "action" attribute tells where to send the form data when submitting the form
+    By default it's making a "GET" request
+   -->
+  <form action="./submission.html">
+
+    <!-- 
+      The "name" attribute represents the keys to the form data that will be sent within
+      this form element. Each "name" will have a corresponding value its associate input.
+      The label's "for" attribute goes hand-in-hand with the input's "id" attribute
+     -->
+    <div>
+      <label for="username">Username</label>
+      <input name="username" type="text" id="username">
+    </div>
+
+    <div>
+      <label>Email
+        <input name="email" type="email">
+      </label>
+    </div>
+
+    <!-- Placeholders can be used to describe the input, they won't be sent as values to the form -->
+    <div>
+      <label for="description">Description</label>
+      <textarea 
+        name="description" 
+        id="description" 
+        cols="20" 
+        rows="3" 
+        placeholder="I like to code"
+      ></textarea>
+    </div>
+
+    <!-- 
+      Both radio buttons have the attribute name="gender",
+      but only one value will be submitted
+      We should also specify what the value of each radio button is when selected
+     -->
+    <div>
+      <label for="female">Female</label>
+      <input name="gender" type="radio" id="female" value="female">
+    </div>
+    <div>
+      <label for="male">Male</label>
+      <input name="gender" type="radio" id="male" value="male">
+    </div>
+
+    <div>
+      <label for="favourite-meal">
+        What is your favourite meal?
+      </label>
+      <select name="favourite-meal" id="favourite-meal">
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+      </select>
+    </div>
+    <!-- 
+      The "required" attribute doesn't need a value
+      It will not allow the form to be submitted if the value is empty
+     -->
+    <div>
+      <label for="agreement">I agree to the terms and conditions</label>
+      <input type="checkbox" id="agreement" required>
+    </div>
+    <input type="submit">
+  </form>
+</body>
+</html>
