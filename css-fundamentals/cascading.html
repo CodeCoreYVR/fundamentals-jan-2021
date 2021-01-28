@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cascading</title>
+  <style>
+    /* 
+      If the specificity is the same and the properties clash,
+      whichever declaration comes last gets applied due cascading
+    */
+    p.post {
+      color: darkmagenta;
+    }
+
+    p.post {
+      color: lawngreen !important;
+    }
+
+    p.post {
+      color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <p class="post">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id repudiandae unde veniam expedita eius omnis consequatur officiis ex, voluptas alias minima enim velit aut repellendus aliquid reprehenderit impedit atque voluptatem assumenda recusandae doloribus! Ipsum ut aut, at modi quis fuga quos facere nisi accusamus magnam rem ipsam illum nulla non?
+  </p>
+  <p class="post">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id repudiandae unde veniam expedita eius omnis consequatur officiis ex, voluptas alias minima enim velit aut repellendus aliquid reprehenderit impedit atque voluptatem assumenda recusandae doloribus! Ipsum ut aut, at modi quis fuga quos facere nisi accusamus magnam rem ipsam illum nulla non?
+  </p>
+  <p class="post">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id repudiandae unde veniam expedita eius omnis consequatur officiis ex, voluptas alias minima enim velit aut repellendus aliquid reprehenderit impedit atque voluptatem assumenda recusandae doloribus! Ipsum ut aut, at modi quis fuga quos facere nisi accusamus magnam rem ipsam illum nulla non?
+  </p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Properties Demo</title>
+  <style>
+    body { margin-bottom: 500px; }
+  </style>
+</head>
+<body>
+  <h1>CSS Properties Demo</h1>
+  <div>
+    <h2>Font-Size</h2>
+    <div>
+      <h3>Absolute Units</h3>
+      <div>
+        <p style="font-size: 12px;">
+          1 px is 1/96th of an inch, not the pixel of the screen of the viewing device
+        </p>
+        <p style="font-size: 0.5cm;">
+          Half a centimetre font-size. 
+          Don't have spaces in-between the values and the CSS unit like this: "0.5 cm", rather this: "0.5cm"
+        </p>
+      </div>
+      <h3>Relative Units</h3>
+      <div>
+        <div style="font-size: 40px">
+          <p style="font-size: 0.5em; border: 0.25em solid black;">
+            em is relative to the font-size of the parent element if we're using it for font properties.
+            If we're using em for anything that's not font related, then its relative to this element's font-size.
+            This element's font-size is 0.5em x 40px = 20px
+            The border (non-font property) is:
+              0.25em x (0.5em x 40px) 
+              0.25em x 20px
+              5px 
+          </p>
+        </div>
+        <p style="font-size: 1.5rem">
+          If the root element's (html element) font-size 16px, then 1.5rem x 16px = 24px
+        </p>
+      </div>
+    </div>
+
+    <h2>Color</h2>
+    <div>
+      <p style="color: hotpink">Predefined color name</p>
+      <p style="color: #FF009F">Hex color code</p>
+      <p style="color: rgb(255, 0, 159)">RGB value</p>
+      <p style="color: rgba(255, 0, 159, 0.5)">RGBA value, alpha ranges from 0 to 1 (transparency)</p>
+    </div>
+
+    <h2>Text-Decoration</h2>
+    <div>
+      <p style="text-decoration: underline;">Underline</p>
+      <p style="text-decoration: overline;">Overline</p>
+      <p style="text-decoration: line-through;">Line Through</p>
+    </div>
+
+    <h2>Width</h2>
+    <div style="width: 200px; background-color: #aaa;" >
+      200px wide
+      width only applies to the content, not the paddings or the margins
+    </div>
+    <div style="width: 400px; border: 2px solid black;">
+      <div style="width: 50%; background-color: mediumorchid;">
+        Percentage units are relative to the parent element's value of the same property
+        50% of 400px = 200px
+      </div>
+    </div>
+    <div style="width: 50vw; background-color: mediumvioletred;">
+      vw is relative to the viewport's width, range is from 0 - 100
+      1 unit of vw is 1% of the viewport's width
+    </div>
+
+    <h2>Height</h2>
+    <div style="height: 20px; background-color: #aaa;" >
+      20px high
+    </div>
+    <div style="height: 100px; border: 2px solid black;">
+      <div style="height: 50%; background-color: mediumorchid;">
+        Percentage units are relative to the parent element's value of the same property
+        50% of 100px = 50px
+      </div>
+    </div>
+    <div style="height: 20vh; background-color: mediumvioletred;">
+      vh is relative to the viewport's height, range is from 0 - 100
+      1 unit of vh is 1% of the viewport's height
+    </div>
+
+    <h2>Text-Align</h2>
+    <div style="border: 2px solid black">
+      <p style="text-align: left;">Left-Align</p>
+      <p style="text-align: right;">Right-Align</p>
+      <p style="text-align: center;">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, cum. Non animi eius cum minus temporibus laborum, esse adipisci impedit consectetur optio facere, dolorem beatae facilis consequuntur dolorum voluptatibus velit hic molestiae aliquam ex dicta debitis molestias deserunt. Minus, sapiente vel voluptatibus neque voluptatem quam amet ea qui nam itaque.
+      </p>
+      <p style="text-align: justify;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat aut recusandae nemo illo laudantium dignissimos sapiente neque dolores vitae nesciunt corrupti mollitia sit deserunt alias assumenda suscipit ducimus natus sequi, placeat similique. Laboriosam corrupti unde, consectetur, maxime incidunt ad facere assumenda itaque eum similique tempora obcaecati illum, atque odio animi?
+      </p>
+    </div>
+
+    <h2>Opacity / Transparency</h2>
+    <div>
+      <p>Opacity (0 to 1) applies to the entire element (background and text)</p>
+      <p style="opacity: 0.5; background-color: darkblue;">50% Opacity</p>
+      <p style="opacity: 1; background-color: darkblue;">Not Opacity</p>
+    </div>
+
+    <h2>Background</h2>
+    <div style="background-color: darkcyan;">Background Color</div>
+    <div style="background-image: url('https://images.freeimages.com/images/large-previews/813/tractor-3-1386656.jpg'); height: 100vh;">Background Image</div>
+    <br>
+    <div style="background-image: url('https://images.freeimages.com/images/large-previews/813/tractor-3-1386656.jpg'); height: 100vh; background-size: contain;">Background Contain and Repeat</div>
+    <br>
+    <div style="background-image: url('https://images.freeimages.com/images/large-previews/813/tractor-3-1386656.jpg'); height: 100vh; background-size: contain; background-repeat: no-repeat;">Background Contain and No Repeat</div>
+  </div>
+</body>
+</html>
