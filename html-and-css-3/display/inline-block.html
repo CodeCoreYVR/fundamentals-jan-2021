@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline Block</title>
+  <style>
+    /* The default display for buttons are inline-block */
+    button {
+      display: inline-block;
+      background-color: yellow;
+
+      /* 
+        Unlike inline, you can change the height/width and margin/padding
+        but they sit inline and start on a new line like block level elements do
+      */
+      height: 50px;
+      margin: 10px;
+    }
+
+    /* Even though <p> are block by default, you can walys change the display to something else */
+    p {
+      display: inline;
+    }
+    p#second-paragraph { 
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum et quidem modi officia facere natus quisquam! Consectetur, vitae sunt sequi impedit excepturi exercitationem expedita rerum tempore aliquam sint maxime fuga?
+  </p>
+  <p id="second-paragraph">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum et quidem modi officia facere natus quisquam! Consectetur, vitae sunt sequi impedit excepturi exercitationem expedita rerum tempore aliquam sint maxime fuga?
+  </p>
+  <p>
+    Lorem ipsum dolor <button>INLINE-BLOCK BUTTON</button> sit amet consectetur adipisicing elit. Cum et quidem modi officia facere natus quisquam! Consectetur, vitae sunt sequi impedit excepturi exercitationem expedita rerum tempore aliquam sint maxime fuga?
+  </p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline</title>
+  <style>
+    a {
+      display: inline;
+      background-color: yellow;
+
+      /* 
+        height and width don't affect inline elements, 
+        they only take up the height and width
+        that's needed for the content
+       */
+      height: 10000px;
+      width: 10000px;
+
+      /* top and bottom margin aren't affected but left and right are */
+      margin-top: 200px;
+      margin-left: 50px;
+    }
+
+    /* Even though <p> are block by default, you can walys change the display to something else */
+    p {
+      display: inline;
+    }
+    p#second-paragraph { 
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum et quidem modi officia facere natus quisquam! Consectetur, vitae sunt sequi impedit excepturi exercitationem expedita rerum tempore aliquam sint maxime fuga?
+  </p>
+  <p id="second-paragraph">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum et quidem modi officia facere natus quisquam! Consectetur, vitae sunt sequi impedit excepturi exercitationem expedita rerum tempore aliquam sint maxime fuga?
+  </p>
+  <p>
+    Lorem ipsum dolor <a href="https://google.ca">INLINE LINK TO GOOGLE</a> sit amet consectetur adipisicing elit. Cum et quidem modi officia facere natus quisquam! Consectetur, vitae sunt sequi impedit excepturi exercitationem expedita rerum tempore aliquam sint maxime fuga?
+  </p>
+</body>
+</html>

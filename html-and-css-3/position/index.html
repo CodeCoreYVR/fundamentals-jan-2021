@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./styles.css">
+  <title>CSS Position</title>
+</head>
+<body>
+  <h1>CSS Position</h1>
+  <div class="parent">
+    <div class="child static">
+      Static
+    </div>
+  </div>
+  <div class="parent">
+    <div class="child relative">
+      Relative <br>
+      Top: 20px <br>
+      Right 40px 
+    </div>
+  </div>
+  <div class="parent parent-absolute">
+    <div class="child absolute">
+      Absolute <br>
+      Top: 20px <br>
+      Right 40px 
+    </div>
+  </div>
+
+  <div class="parent">
+    We don't see the fixed child in this parent div because it's taken out of the flow
+    of the document and is now relative to the viewport
+    <div class="child fixed">
+      Fixed <br>
+      Top: 0px <br>
+      Left: 0px
+    </div>
+  </div>
+
+</body>
+</html>
