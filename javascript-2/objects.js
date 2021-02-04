@@ -67,3 +67,68 @@ countChars("test")
 //   e: 1,
 //   s: 1,
 // }
+
+// Exercises
+// Print person:
+function printPerson(person) {
+  console.log(`${person.name} is ${person.age} years old`)
+}
+
+printPerson({
+  name: "Joe",
+  age: 56,
+}) // -> "Joe is 56 years old"
+
+// Object word lengths
+const getWordLengths = (sentence) => {
+  const wordLengths = {}
+  const words = sentence.split(" ") // -> ["Hello", "Universe"]
+
+  for (let word of words) {
+    wordLengths[word] = word.length
+  }
+
+  return wordLengths
+}
+
+getWordLengths("Hello Universe")
+// {
+//   Hello: 5,
+//   Universe: 8,
+// }
+
+// for..in syntax will loop through every key/property in the object
+for (let key in car) {
+  console.log("key:", key, "value:", car[key])
+}
+
+function printPerson2(person) {
+  for (let property in person) {
+    console.log(`Person's ${property} is ${person[property]}`)
+  }
+}
+
+// return an array of an object's keys or values
+Object.keys(car)
+Object.values(car)
+
+// Delete a key/value pair by using the 'delete' keyword
+delete car.doors
+
+// Verify if the key exists in the object
+car.hasOwnProperty('doors') // -> false
+car.hasOwnProperty('colour') // -> true
+
+typeof {} // -> "object"
+typeof [] // -> "object"
+Array.isArray({}) // -> false
+Array.isArray([]) // -> true
+
+// object keys have to be unique
+const obj = {
+  a: 1,
+  b: 2, 
+  a: 3,
+}
+
+obj // -> {a: 3, b: 2}
