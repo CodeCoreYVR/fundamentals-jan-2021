@@ -1,5 +1,7 @@
 // jQuery Lab: http://bit.ly/jquery-lab
 
+// ==== SELECTION ====
+
 // Select all shapes
 $('.shape') // returns jquery wrapped set
 document.querySelectorAll('.shape') // querySelectorAll returns a Node List (includes Text/Comment Nodes) that match the selector
@@ -32,6 +34,8 @@ document.querySelectorAll('.small.circle')
 $('h1')[0] // returns the element node itself (which can call DOM methods for elements)
 $('h1').eq(0) // returns the element wrapped in a set at that index, so we can chain jQuery methods on it like this:
 $('h1').eq(0).hide()
+
+// ==== Attributes ====
 
 // Get the "href" attribute of the first link on the page
 $('a').eq(0).attr('href')
@@ -67,6 +71,8 @@ shapes.forEach(node => {
   node.classList.remove('highlight')
   node.classList.toggle('highlight')
 })
+
+// ==== Manipulation ====
 
 // Remove all blue shapes 
 $('.shape.blue').remove()
@@ -113,6 +119,8 @@ document.querySelectorAll('h1').forEach(h1 => {
   h1.innerHTML = `${name} is cool!`
 })
 
+// ==== TRAVERSAL ====
+
 // Select all shapes in the purple container
 $('#purple-container').children()
 document.querySelector('#purple-container').children // returns HTMLCollection of child elements
@@ -130,6 +138,8 @@ const liWithAnchors = []
 document.querySelectorAll('li a').forEach(a => {
   liWithAnchors.push(a.closest('li'))
 })
+
+// ==== EFFECTS ====
 
 // Hides the purple container
 // sets display: none (still in the DOM)
@@ -158,3 +168,105 @@ $('a').show()
 document.querySelectorAll('a').forEach(a => {
   a.style.display = 'inline'
 })
+
+// ==== EVENTS ====
+
+// When any shape is clicked, log "shape clicked" to the console
+// "click" is the name of the event
+// The second argument is a callback, also known as the event handler
+// It will be invoked when the event fires
+$('.shape').on('click', function() {
+  console.log('shape clicked')
+})
+
+document.querySelectorAll('.shape').forEach(shape => {
+  shape.addEventListener('click', function() {
+    console.log('shape clicked')
+  })
+})
+
+// When our mouse enters a blue circle, log "blue circle: go away!"
+$('.blue.circle').on('mouseenter', function() {
+  console.log('blue circle: go away!')
+})
+
+document.querySelectorAll('.blue.circle').forEach(blueCircle => {
+  blueCircle.addEventListener('mouseenter', function() {
+    console.log('blue circle: go away!')
+  })
+})
+
+// When our mouse leaves a blue circle, log "blue circle: goodbye!"
+$('.blue.circle').on('mouseleave', function() {
+  console.log('blue circle: goodbye!')
+})
+
+document.querySelectorAll('.blue.circle').forEach(blueCircle => {
+  blueCircle.addEventListener('mouseleave', function() {
+    console.log('blue circle: goodbye!')
+  })
+})
+
+// When a mouse enters any <tr>, set its class to "highlight"
+// "this" in the event handler refers to the element that the event 
+// listener was attached to
+$('tr').on('mouseenter', function() {
+  console.log(this) // DOM element
+  console.log($(this)) // DOM element wrapped in a jQuery set
+})
+
+$('tr').on('mouseenter', function() {
+  $(this).attr('class', 'highlight')
+})
+
+document.querySelectorAll('tr').forEach(tr => {
+  tr.addEventListener('mouseenter', function() {
+    console.log('The element that the event was attached:', tr)
+    console.log(tr === this)
+    tr.setAttribute('class', 'highlight')
+  })
+})
+
+// When a mouse leaves any <tr>, set its class to ""
+$('tr').on('mouseleave', function() {
+  $(this).attr('class', '')
+})
+
+document.querySelectorAll('tr').forEach(tr => {
+  tr.addEventListener('mouseleave', function() {
+    tr.setAttribute('class', '')
+  })
+})
+
+// When a shape is clicked, log its "class" attribute to the console
+$('.shape').on('click', function() {
+  console.log($(this).attr('class'))
+})
+
+document.querySelectorAll('.shape').forEach(shape => {
+  shape.addEventListener('click', function() {
+    console.log(shape.getAttribute('class'))
+  })
+}) 
+
+// When a shape is clicked, hide it
+$('.shape').on('click', function() {
+  $(this).hide()
+})
+
+document.querySelectorAll('.shape').forEach(shape => {
+  shape.addEventListener('click', function() {
+    shape.style.display = 'none'
+  })
+}) 
+
+// When any shape is clicked, remove its container
+$('.shape').on('click', function() {
+  $(this).closest('.container').remove()
+})
+
+document.querySelectorAll('.shape').forEach(shape => {
+  shape.addEventListener('click', function() {
+    shape.closest('.container').remove()
+  })
+}) 
